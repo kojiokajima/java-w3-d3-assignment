@@ -13,16 +13,16 @@ public class Student {
 	
 	
 	// default constructor
-	public Student(String fName, String lName) {
-		if (fName == "" || fName == null) {
-			firstName = "Unknown";
+	public Student(String firstName, String lastName) {
+		if (firstName == "" || firstName == null) {
+			this.firstName = "Unknown";
 		} else {
-			firstName = fName;			
+			this.firstName = firstName;			
 		}
-		if (lName == "" || lName == null) {
-			lastName = "Unknown";
+		if (lastName == "" || lastName == null) {
+			this.lastName = "Unknown";
 		} else {
-			lastName = lName;			
+			this.lastName = lastName;			
 		}
 	}
 	
@@ -30,35 +30,35 @@ public class Student {
 	 *  @return first name
 	 */
 	public String getFirstName() {
-		return firstName;
+		return this.firstName;
 	}
 	
 	/*
 	 *  @return last name
 	 */
 	public String getLastName() {
-		return lastName;
+		return this.lastName;
 	}
 	
 	/*
 	 *  Set the first name
 	 */
-	public void setFirstName(String fName) {
-		if(fName == "" || fName == null) {
-			firstName = "Unknown";
+	public void setFirstName(String firstName) {
+		if(firstName == "" || firstName == null) {
+			this.firstName = "Unknown";
 		} else {			
-			firstName = fName;	
+			this.firstName = firstName;	
 		}
 	}
 	
 	/*
 	 *  Set the first name
 	 */
-	public void setLastName(String lName) {
-		if (lName == "" || lName == null) {
-			lastName = "Unknow";
+	public void setLastName(String lastName) {
+		if (lastName == "" || lastName == null) {
+			this.lastName = "Unknow";
 		} else {
-			lastName = lName;
+			this.lastName = lastName;
 		}
 	}
 	
