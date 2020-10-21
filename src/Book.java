@@ -1,3 +1,4 @@
+import javax.sound.midi.VoiceStatus;
 
 public class Book {
 	// Instance variables
@@ -5,28 +6,34 @@ public class Book {
 	private String authorFirst;
 	private String authorLast;
 	private int yearOfPublication;
+	private double price;
 	
-	public Book(String title, String authorFName, String authorLName, int year) {
+	public Book(String title, String authorFName, String authorLName, int year ,double price) {
 		
 		if (title == "") {
-			bookTitle = "Unknown";
+			this.bookTitle = "Unknown";
 		} else {
-			bookTitle = title;			
+			this.bookTitle = title;			
 		}
 		if (authorFName == "") {
-			authorFirst = "John";
+			this.authorFirst = "John";
 		} else {
-			authorFirst = authorFName;
+			this.authorFirst = authorFName;
 		}
 		if (authorLName == "") {
-			authorLast = "Doe";
+			this.authorLast = "Doe";
 		} else {
-			authorLast = authorLName;			
+			this.authorLast = authorLName;			
 		}
 		if (year < 1990) {
-			yearOfPublication = 1990;
+			this.yearOfPublication = 1990;
 		} else {			
-			yearOfPublication = year;
+			this.yearOfPublication = year;
+		}
+		if (price <= 0) {
+			this.price = 1;
+		} else {
+			this.price = price;			
 		}
 	}
 	
@@ -35,60 +42,77 @@ public class Book {
 	 * return book title
 	 */
 	public String getTitle() {
-		return bookTitle;
+		return this.bookTitle;
 	}
-	
 	/*
 	 * return first name
 	 */
 	public String getFirst() {
-		return authorFirst;
+		return this.authorFirst;
 	}
-	
 	/*
 	 * return last name
 	 */
 	public String getLast() {
-		return authorLast;
+		return this.authorLast;
 	}
-	
 	/*
 	 * return year of publication 
 	 */
 	public int getYear() {
-		return yearOfPublication;
+		return this.yearOfPublication;
+	}
+	/*
+	 * return year of publication 
+	 */
+	public double getPrice() {
+		return this.price;
 	}
 	
 	/*
 	 * set book title, first name, last name, and year of publication
 	 */
-	public void setTitle(String bTitle) {
-		if (bTitle == "") {
-			bookTitle = "Unknown";
+	public void setTitle(String bookTitle) {
+		if (bookTitle == "") {
+			this.bookTitle = "Unknown";
 		} else {			
-			bookTitle = bTitle;
+			this.bookTitle = bookTitle;
 		}
 	}
-	public void setFirstName(String fName) {
-		if (fName == "") {
-			authorFirst = "John";
+	public void setFirstName(String authorFirst) {
+		if (authorFirst == "") {
+			this.authorFirst = "John";
 		} else {			
-			authorFirst = fName;
+			this.authorFirst = authorFirst;
 		}
 	}
-	public void setLastName(String lName) {
-		if (lName == "") {
-			authorLast = "Doe";
+	public void setLastName(String authorLast) {
+		if (authorLast == "") {
+			this.authorLast = "Doe";
 		} else {
-			authorLast = lName;			
+			this.authorLast = authorLast;			
 		}
 	}
-	public void setYear(int yearPub) {
-		if (yearPub < 1990) {
-			yearOfPublication = 1990;
+	public void setYear(int yearOfPublication) {
+		if (yearOfPublication < 1990) {
+			this.yearOfPublication = 1990;
 		} else {			
-			yearOfPublication = yearPub;
+			this.yearOfPublication = yearOfPublication;
 		}
+	}
+	public void setPrice(double price) {
+		if (price <= 0) {
+			this.price = 1;
+		} else {
+			this.price = price;
+		}
+	}
+	
+	
+	
+	public double getTotalPrice() {
+		double totalPrice = this.price * 1.12;
+		return totalPrice;
 	}
 	
 	
