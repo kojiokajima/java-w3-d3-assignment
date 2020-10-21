@@ -1,5 +1,3 @@
-import javax.sound.midi.VoiceStatus;
-
 /* basic requirement for the class
  * Instance Variables
  * Constructor
